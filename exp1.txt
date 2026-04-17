@@ -1,0 +1,87 @@
+package appyworkspace;
+import java.util.Scanner;
+public class appyworkspace{
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int choice;
+
+do {
+System.out.println("\n=
+==== STUDENT UTILITY
+APP =====");
+System.out.println("1.
+Even / Odd");
+System.out.println("2.
+Largest of 3 Numbers");
+System.out.println("3.
+Multiplication Table");
+System.out.println("4.
+Prime Numbers up to
+N");
+System.out.println("5.
+Exit");
+Sy
+st
+em
+.o
+ut
+.p
+ri
+nt
+("
+En
+te
+r
+ch
+oi
+ce
+:
+")
+;
+ch
+oi
+ce
+=
+sc
+.n
+ex
+tI
+nt
+
+()
+;
+
+switch (choice) {
+case 1:
+int num = sc.nextInt();
+System.out.println(num % 2 == 0 ? "EVEN" : "ODD");
+break;
+case 2:
+int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
+System.out.println("Largest: " + Math.max(a, Math.max(b, c)));
+break;
+case 3:
+int n = sc.nextInt();
+for (int i = 1; i <= 10; i++)
+System.out.println(n + " x " + i + " = " + (n * i));
+break;
+case 4:
+int limit = sc.nextInt();
+for (int i = 2; i <= limit; i++) {
+boolean prime = true;
+for (int j = 2; j * j <= i; j++)
+if (i % j == 0) { prime = false; break; }
+if (prime) System.out.print(i + " ");
+}
+System.out.println();
+break;
+case 5:
+System.out.println("Exiting...");
+break;
+default:
+System.out.println("Invalid choice");
+}
+} while (choice != 5);
+sc.close();
+}
+}
